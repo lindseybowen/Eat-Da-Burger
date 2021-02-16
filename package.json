@@ -1,0 +1,22 @@
+{
+  "name": "eat-da-burger",
+  "version": "1.0.0",
+  "description": "a restaurant app that lets users input the names of burgers they'd like to eat.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lindseybowen/Eat-Da-Burger.git"
+  },
+  "author": "lindseybowen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lindseybowen/Eat-Da-Burger/issues"
+  },
+  "homepage": "https://github.com/lindseybowen/Eat-Da-Burger#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
