@@ -1,0 +1,47 @@
+<h1 class="text-center display-1 text-light">Eat Da Burger</h1>
+<hr>
+
+<div class="container">
+  <div id="image" class="box">
+    <img src="imgs/burger.png" alt="Burger Image">
+  </div>
+  <form id="create-burger">
+      <div class="input-group mb-5">
+        <input autocomplete="off" type="text" id="burger-name" class="validate form-control" placeholder="Create a burger!">
+        <label for="burger-name"></label>
+      <div class="input-group-append">
+        <button class="btn" type="submit">Create</button>   
+      </div>
+      </div>
+  </form>
+{{!-- ******************** Burgers ************************ --}}
+  <div class="row">
+    <div class="col">
+      <h2 class="text-center display-4">Burgers</h2>
+        {{#each burgers}}
+        {{#unless this.devoured}}
+         <div class="text">
+          {{this.id}}. {{this.burger_name}}
+          <button data-id="{{this.id}}" class="btn btn-sm devour-btn">Devour</button>
+        </div>
+        {{/unless}}
+        {{/each}}
+    </div>
+{{!-- **************** Devoured ********************* --}}
+    <div class="col">
+      <h2 class="text-center display-4">Devoured</h2>
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <div class="text">
+          {{this.id}}. {{this.burger_name}}
+        </div>
+        {{/if}}
+        {{/each}}
+      
+        {{#if devoured}}
+        <button id="clear-btn" class="btn devour-btn">Clear</button>
+        {{/if}}
+      
+    </div>
+  </div>
+</div>

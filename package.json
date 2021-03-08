@@ -1,8 +1,8 @@
 {
-  "name": "eat-da-burger",
+  "name": "mysql-sequelize-heroku",
   "version": "1.0.0",
   "description": "a restaurant app that lets users input the names of burgers they'd like to eat.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/lindseybowen/Eat-Da-Burger#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
+    "express-handlebars": "^5.2.1",
     "mysql": "^2.18.1"
   }
 }
