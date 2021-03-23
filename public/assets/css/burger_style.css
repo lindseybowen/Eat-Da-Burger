@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(#91091e, #da723c, #c39e5c, #fdf1d6);
+  font-family: "Shrikhand", cursive;
+  min-height: 100vh;
+  text-align: center;
+  font-size: 20px;
+}
+
+.btn {
+  background-color: #da723c;
+  color: #fff;
+  box-shadow: 0 20px 20px 0 rgba(161, 126, 29, 0.6);
+}
+
+.btn:hover {
+  color: #91091e;
+}
+
+h2 {
+  color: #91091e;
+}
+
+img {
+  width: 500px;
+  height: 500px;
+}
+
+.text {
+  padding: 10px 0px 10px 20px;
+  border-radius: 10px;
+  margin: 10px 10px 0px 0px;
+}
