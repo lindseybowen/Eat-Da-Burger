@@ -1,19 +1,22 @@
-// Set up MySQL connection.
-const mysql = require("mysql");
-require("dotenv").config();
+const mysql = require('mysql');
+const exphbs = require('express-handlebars');
+const express = require('express');
 
-if (process.env.JAWSDB_URL) {
+const app = express();
+
+if (process.env.JAWSDB_URL){
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-  connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: 'frtp3rw3vj73b1dv',
+  const connection = mysql.createConnection({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: 'Dre525252',
     database: 'burgers_db',
   });
 }
 
-// Make connection.
+
 connection.connect((err) => {
   if (err) {
     console.error(`error connecting: ${err.stack}`);
@@ -22,5 +25,12 @@ connection.connect((err) => {
   console.log(`connected as id ${connection.threadId}`);
 });
 
-// Export connection for ORM
+
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 module.exports = connection;
