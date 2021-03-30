@@ -1,47 +1,47 @@
-<h1 class="text-center display-1 text-light">Eat Da Burger</h1>
-<hr>
+<h1>Eat Da Burger!</h1>
 
-<div class="container">
-  <div id="image" class="box">
-    <img src="assets/imgs/burger.png" alt="Burger Image">
+<img src="https://media2.giphy.com/media/i4bWPx9KZWeMph3ZLv/source.gif">
+
+<div class="BurgOrders">
+<h2 id="burgNow">Your Burger Orders!</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#unless hungry}}
+  {{> burger-block hungry=true}}
+  {{/unless}}
+  {{/each}}
+</ul>
+</div>
+
+<div class="Takeout">
+<h2 id="burgLater">Takeout for later!</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#if hungry}}
+  {{> burger-block hungry=false}}
+  {{/if}}
+  {{/each}}
+</ul>
+</div>
+
+<div class="newOrder">
+<h3>Add a Burger Order</h3>
+<form id="create-form">
+
+  <div class="form-group">
+    <label for="burger_name">Burger Type:</label>
+    <input type="text" id="burger_name" name="burger_name">
   </div>
-  <form id="create-burger">
-      <div class="input-group mb-5">
-        <input autocomplete="off" type="text" id="burger-name" class="validate form-control" placeholder="Create a burger!">
-        <label for="burger-name"></label>
-      <div class="input-group-append">
-        <button class="btn" type="submit">Create</button>   
-      </div>
-      </div>
-  </form>
-{{!-- ******************** Burgers ************************ --}}
-  <div class="row">
-    <div class="col">
-      <h2 class="text-center display-4">Burgers</h2>
-        {{#each burgers}}
-        {{#unless this.devoured}}
-         <div class="text">
-          {{this.id}}. {{this.burger_name}}
-          <button data-id="{{this.id}}" class="btn btn-sm devour-btn">Devour</button>
-        </div>
-        {{/unless}}
-        {{/each}}
-    </div>
-{{!-- **************** Devoured ********************* --}}
-    <div class="col">
-      <h2 class="text-center display-4">Devoured</h2>
-        {{#each burgers}}
-        {{#if this.devoured}}
-        <div class="text">
-          {{this.id}}. {{this.burger_name}}
-        </div>
-        {{/if}}
-        {{/each}}
-      
-        {{#if devoured}}
-        <button id="clear-btn" class="btn devour-btn">Clear</button>
-        {{/if}}
-      
-    </div>
+
+  <div class="form-group">
+    <label for="hungry">Hungry Now?</label><br>
+    <input type="radio" name="hungry" value="1" id="hungry" checked> Hungry!<br>
+    <input type="radio" name="hungry" value="0" id="full"> Full
   </div>
+
+  <button type="submit">Add your Burger</button>
+</form>
+
 </div>
